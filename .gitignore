@@ -1,0 +1,6 @@
+# Gizli dosyalar
+config/.env
+outputs/
+__pycache__/
+*.pyc
+.venv
