@@ -22,7 +22,7 @@ def generate_summary(text: str) -> str:
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo-0125",  # En ekonomik ve hızlı
         messages=[
-            {"role": "system", "content": "Bu metni maksimum 3 cümlede özetle. Dil: Türkçe"},
+            {"role": "system", "content": "Bu metnin ne anlattığını anla ve özetini oluştur. Dil: Türkçe"},
             {"role": "user", "content": text}
         ],
         max_tokens=50  # Maliyet kontrolü
@@ -34,7 +34,7 @@ def generate_questions(text: str) -> str:
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo-0125",
         messages=[
-            {"role": "system", "content": "Bu metinden 5 çoktan seçmeli soru üret. Sorular Türkçe olsun."},
+            {"role": "system", "content": "Bu metinden 20 çoktan seçmeli soru üret. Sorular Türkçe olsun."},
             {"role": "user", "content": text}
         ],
         max_tokens=300
